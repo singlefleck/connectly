@@ -1,0 +1,1 @@
+"""Connectly FastAPI application package."""
