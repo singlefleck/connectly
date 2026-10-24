@@ -20,3 +20,13 @@ async def root():
         "debug": settings.debug,
         "status": "running",
     }
+
+
+@app.get("/health/live", tags=["health"])
+async def liveness():
+    return {"status": "alive"}
+
+
+@app.get("/health/ready", tags=["health"])
+async def readiness():
+    return {"status": "ready"}
