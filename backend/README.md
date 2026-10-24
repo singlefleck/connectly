@@ -1,6 +1,6 @@
 # Connectly Backend
 
-The Python backend for Connectly, a video calling application.
+Python backend for the Connectly video calling application.
 
 ## Requirements
 
@@ -9,8 +9,18 @@ The Python backend for Connectly, a video calling application.
 
 ## Setup
 
-Create and activate a virtual environment:
+From the backend directory:
 
-```bash
-python -m venv .venv
-source .venv/bin/activate
+    python -m venv .venv
+    source .venv/bin/activate
+    pip install -r requirements.txt
+
+## Run locally
+
+    uvicorn app.main:app --reload
+
+## API documentation
+
+- Interactive docs: http://127.0.0.1:8000/docs
+- OpenAPI schema: http://127.0.0.1:8000/openapi.json
+- Root endpoint: http://127.0.0.1:8000/
