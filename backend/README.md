@@ -46,3 +46,25 @@ Available settings:
 
 The `.env` file is for local configuration only and must not
 be committed. `.env.example` documents the available settings.
+
+
+## Health checks
+
+| Endpoint | Purpose | Expected response |
+|---|---|---|
+| `GET /health/live` | Checks whether the application is responding | `{"status": "alive"}` |
+| `GET /health/ready` | Checks whether the application is ready to accept requests | `{"status": "ready"}` |
+
+Currently, the application has no external dependencies required for
+readiness. The readiness check can be extended when we introduce
+dependencies such as a database.
+
+## Running tests
+
+Install development dependencies:
+
+    pip install -r requirements-dev.txt
+
+Run the test suite:
+
+    python -m pytest -v
